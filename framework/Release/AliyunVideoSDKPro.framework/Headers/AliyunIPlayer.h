@@ -61,5 +61,20 @@
  */
 - (double)getCurrentTime;
 
+/**
+ 设置播放器激活状态
+ 
+ @param active
+ 接收到系统Active通知，调用该方法设置播放器是否active
+ UIApplicationDidBecomeActiveNotification
+ UIApplicationWillResignActiveNotification
+ 处于active状态，播放器可以响应play方法
+ 处于inactive状态，播放器不可以响应play方法
+ SDK内部会注册这两个通知处理active状态
+ 如果用户要在UIApplicationDidBecomeActiveNotification回调中调play方法
+ 由于无法保证通知接收的先后顺序，需要先调用该方法保证处于播放器active状态
+ */
+- (void)setActive:(BOOL)active;
+
 
 @end

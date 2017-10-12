@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                    = 'AliyunVideoSDKPro'
-  s.version                 = '3.3.2'
-  s.summary                 = 'Aliyun Short Video SDK Pro v3.3.2'
+  s.version                 = '3.3.3'
+  s.summary                 = 'Aliyun Short Video SDK Pro v3.3.3'
   s.homepage                = 'https://promotion.aliyun.com/ntms/act/shortvideo.html'
   s.documentation_url       = 'https://re-cover.github.io/AliyunVideoSDKPro/'
   s.license                 = { :type => 'LGPL', :text => <<-LICENSE

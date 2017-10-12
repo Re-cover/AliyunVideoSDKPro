@@ -54,6 +54,16 @@
  */
 - (void)addPath:(NSString *)path fadeDuration:(float)fadeDuration inDuration:(float)inDuration outDruation:(float)outDuration mode:(int)mode;
 
+
+/**
+ 添加视频路径
+ 
+ @param path 视频路径
+ 
+ */
+- (void)addPath:(NSString *)path startTime:(float)startTime duration:(float)duration fadeDuration:(float)fadeDuration inDuration:(float)inDuration outDruation:(float)outDuration mode:(int)mode;
+
+
 /**
  获取所有播放的视频的本地路径
  
