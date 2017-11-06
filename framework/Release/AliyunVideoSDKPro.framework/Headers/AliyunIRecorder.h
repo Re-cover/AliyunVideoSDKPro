@@ -196,6 +196,12 @@ enum {
  */
 @property (nonatomic, assign) AliyunVideoQuality videoQuality;
 
+
+/**
+ 码率
+ */
+@property (nonatomic, assign) int bitrate;
+
 /**
  视频片段管理
  */
@@ -216,6 +222,11 @@ enum {
  使用自带人脸识别，开启该功能，系统会在检测到有人脸动图加入时自动进行追踪显示
  */
 @property (nonatomic, assign) BOOL useFaceDetect;
+
+/**
+ 人脸数量的回调，在useFaceDetect开启的状态下生效
+ */
+@property (nonatomic, copy) void (^faceNumbersCallback)(int num);
 
 
 + (NSString *)version;

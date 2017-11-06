@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, AliyunScaleMode) {
 @interface AliyunVideoParam : NSObject
 @property (nonatomic, assign) int fps;
 @property (nonatomic, assign) int gop;
+@property (nonatomic, assign) int bitrate;
 @property (nonatomic, assign) AliyunVideoQuality videoQuality;
 @property (nonatomic, assign) AliyunScaleMode scaleMode;
 

@@ -57,6 +57,7 @@ FOUNDATION_EXPORT const unsigned char QUSDKVersionString[];
 #import <AliyunVideoSDKPro/AliyunEventManager.h>
 #import <AliyunVideoSDKPro/AliyunErrorCodeEnum.h>
 #import <AliyunVideoSDKPro/AliyunClip.h>
+#import <AliyunVideoSDKPro/AVAsset+AliyunSDKInfo.h>
 #endif /* QUSDK_h */
 
 

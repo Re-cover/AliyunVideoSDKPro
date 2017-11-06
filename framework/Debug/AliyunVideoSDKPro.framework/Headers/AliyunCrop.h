@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, AliyunCropCutMode) {
 - (void)cropTaskOnComplete;
 /**
  取消回调
- 主动取消时回调
+ 主动取消或退后台时回调
  */
 - (void)cropTaskOnCancel;
 
@@ -109,6 +109,16 @@ typedef NS_ENUM(NSInteger, AliyunCropCutMode) {
  编码方式 0软编   1硬编
  */
 @property (nonatomic, assign) int encodeMode;  // 0软编   1硬编
+
+/**
+ 码率
+ */
+@property (nonatomic, assign) int bitrate;
+
+/**
+ 是否启用gpu裁剪
+ */
+@property (nonatomic, assign) BOOL useHW;
 
 /**
  视频填充模式下，填充的背景颜色

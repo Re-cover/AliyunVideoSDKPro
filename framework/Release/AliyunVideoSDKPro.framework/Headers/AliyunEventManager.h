@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AVAsset+AliyunSDKInfo.h"
 #define DefaultEventManager [AliyunEventManager sharedManager]
 
 typedef NS_ENUM(NSInteger, AliyunEvent) {
@@ -23,12 +23,20 @@ typedef NS_ENUM(NSInteger, AliyunEvent) {
     AliyunEventRecordRate,
     AliyunEventRecordBeauty,
     AliyunEventRecordPosition,
+    AliyunEventEditInit = 3001,
     AliyunEventEditFilter = 3005,
     AliyunEventEditMV,
     AliyunEventEditExportStart = 3011,
     AliyunEventEditExportCancel,
     AliyunEventEditExportError = 3016,
-    AliyunEventEditExportFinish
+    AliyunEventEditExportFinish,
+    AliyunEventTranscodeStart = 8001,
+    AliyunEventTranscodeCancel,
+    AliyunEventTranscodeError,
+    AliyunEventTranscodeFinish,
+    AliyunEventImporterAddVideo = 9001,
+    AliyunEventImporterAddImage = 9002,
+    AliyunEventImporterFinish = 9003,
 };
 
 typedef struct AliyunVideoEventInfo {
@@ -42,7 +50,7 @@ typedef struct AliyunVideoEventInfo {
 
 @interface AliyunEventManager : NSObject
 
-@property (nonatomic, copy, readonly) NSString *requestID;
+@property (nonatomic, copy) NSString *requestID;
 @property (nonatomic, assign) BOOL enabled;
 
 + (instancetype)sharedManager;
@@ -50,6 +58,8 @@ typedef struct AliyunVideoEventInfo {
 - (void)sendEvent:(AliyunEvent)event params:(NSDictionary *)params;
 
 - (AliyunVideoEventInfo)videoInfoWithPath:(NSString *)path;
+
+- (int64_t)crc64WithPath:(NSString *)path;
 
 - (void)refreshRequestID;
 
